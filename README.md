@@ -19,27 +19,29 @@ export default createReducer({
   [EXAMPLE_SET_NAME]: (state, name) => ({ ...state, name }),
 })
 
-// export const EXAMPLE_SET_NAME = 'EXAMPLE_SET_NAME'
+/* Instead of:
+export const EXAMPLE_SET_NAME = 'EXAMPLE_SET_NAME'
 
-// export function setName(name) {
-//   return {
-//     type: EXAMPLE_SET_NAME,
-//     name,
-//   }
-// }
+export function setName(name) {
+  return {
+    type: EXAMPLE_SET_NAME,
+    name,
+  }
+}
 
-// const initialState = {
-//   name: '',
-// }
+const initialState = {
+  name: '',
+}
 
-// export default function(state = initialState, action) {
-//   switch (action.type) {
-//     case EXAMPLE_SET_NAME {
-//       return { ...state, name: action.name }
-//     }
-//     default: {
-//       return state
-//     }
-//   }
-// })
+export default function(state = initialState, action) {
+  switch (action.type) {
+    case EXAMPLE_SET_NAME {
+      return { ...state, name: action.name }
+    }
+    default: {
+      return state
+    }
+  }
+})
+*/
 ```
