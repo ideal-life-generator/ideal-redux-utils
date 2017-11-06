@@ -20,9 +20,6 @@ export default createReducer({
 })
 
 /*
-
-Instead of:
-
 export const EXAMPLE_SET_NAME = 'EXAMPLE_SET_NAME'
 
 export function setName(name) {
