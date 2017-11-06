@@ -3,9 +3,9 @@ export default (initialState, handlers) => (state = initialState, { type, args }
 )
 
 export const createAction = type => ({
+  type,
   action: (...args) => ({
     type,
     args,
   }),
-  type,
 })
