@@ -19,7 +19,10 @@ export default createReducer({
   [EXAMPLE_SET_NAME]: (state, name) => ({ ...state, name }),
 })
 
-/* Instead of:
+/*
+
+Instead of:
+
 export const EXAMPLE_SET_NAME = 'EXAMPLE_SET_NAME'
 
 export function setName(name) {
