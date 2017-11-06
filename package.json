@@ -5,13 +5,11 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
-  "typings": "./index.d.ts",
   "files": [
     "dist",
     "lib",
     "es",
-    "src",
-    "index.d.ts"
+    "src"
   ],
   "scripts": {
     "clean": "rimraf lib dist es coverage",
@@ -33,9 +31,10 @@
     "url": "https://github.com/ideal-life-generator/ideal-redux-utils.git"
   },
   "keywords": [
-    "validation",
-    "forms",
-    "validator"
+    "redux",
+    "utils",
+    "action",
+    "reducer"
   ],
   "authors": [
     "Vladislav Tkachenko <ideal.life.generator@gmail.com> (https://github.com/ideal-life-generator)"
@@ -86,8 +85,7 @@
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-uglify": "^2.0.1",
-    "validator": "^9.1.1"
+    "rollup-plugin-uglify": "^2.0.1"
   },
   "npmName": "ideal-redux-utils",
   "npmFileMap": [
