@@ -16,7 +16,7 @@ export const { type: SET_TEXT, action: setText } = createAction('SET_TEXT', 'tex
 /*
 export const SET_TEXT = 'SET_TEXT'
 
-export function settext(text) {
+export function setText(text) {
   return {
     type: SET_TEXT,
     text,
