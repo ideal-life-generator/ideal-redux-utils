@@ -1,7 +1,7 @@
 import createReducer, { createAction } from '../src/index'
 
 describe('action', () => {
-  const { type, action } = createAction('TEST')
+  const { type, action } = createAction('TEST', 'first', 'second')
 
   it('create', () => {
     expect(type).toEqual('TEST')
@@ -10,15 +10,15 @@ describe('action', () => {
   })
 
   it('without arguments', () => {
-    expect(action()).toEqual({ type: 'TEST', args: [] })
+    expect(action()).toEqual({ type: 'TEST' })
   })
 
   it('with argument', () => {
-    expect(action('test')).toEqual({ type: 'TEST', args: ['test'] })
+    expect(action('test')).toEqual({ type: 'TEST', first: 'test' })
   })
 
   it('with arguments', () => {
-    expect(action(1, 2)).toEqual({ type: 'TEST', args: [1, 2] })
+    expect(action(1, 2)).toEqual({ type: 'TEST', first: 1, second: 2 })
   })
 })
 
@@ -26,7 +26,7 @@ describe('reducer', () => {
   const reducer = createReducer({
     test: 'test',
   }, {
-    TEST: (state, arg1, arg2) => ({ ...state, test: !arg2 ? arg1 : arg1 + arg2 }),
+    TEST: (state, { first, second }) => ({ ...state, test: !second ? first : first + second }),
   })
 
   it('initial state', () => {
@@ -38,10 +38,10 @@ describe('reducer', () => {
   })
 
   it('handler with argument', () => {
-    expect(reducer(undefined, { type: 'TEST', args: [1] })).toEqual({ test: 1 })
+    expect(reducer(undefined, { type: 'TEST', first: 1 })).toEqual({ test: 1 })
   })
 
   it('handler with arguments', () => {
-    expect(reducer(undefined, { type: 'TEST', args: [1, 2] })).toEqual({ test: 3 })
+    expect(reducer(undefined, { type: 'TEST', first: 1, second: 2 })).toEqual({ test: 3 })
   })
 })

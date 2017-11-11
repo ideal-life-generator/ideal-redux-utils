@@ -6,36 +6,36 @@
 npm install --save ideal-redux-utils
 ```
 
-### Usage
+### Example
 
 ```js
 import createReducer, { createAction } from 'ideal-redux-utils'
 
-export const { type: EXAMPLE_SET_NAME, action: setName } = createAction('EXAMPLE_SET_NAME')
+export const { type: SET_NAME, action: setName } = createAction('SET_NAME', 'name')
+
+/*
+export const SET_NAME = 'SET_NAME'
+
+export function setName(name) {
+  return {
+    type: SET_NAME,
+    name,
+  }
+}
+*/
 
 export default createReducer({
   name: '',
 }, {
-  [EXAMPLE_SET_NAME]: (state, name) => ({ ...state, name }),
+  [SET_NAME]: (state, { name }) => ({ ...state, name }),
 })
 
 /*
-export const EXAMPLE_SET_NAME = 'EXAMPLE_SET_NAME'
-
-export function setName(name) {
-  return {
-    type: EXAMPLE_SET_NAME,
-    name,
-  }
-}
-
-const initialState = {
+export default function reducer(state = {
   name: '',
-}
-
-export default function(state = initialState, action) {
+}, action) {
   switch (action.type) {
-    case EXAMPLE_SET_NAME {
+    case SET_NAME {
       return { ...state, name: action.name }
     }
     default: {
